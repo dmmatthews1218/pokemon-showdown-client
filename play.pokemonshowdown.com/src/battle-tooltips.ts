@@ -764,6 +764,9 @@ export class BattleTooltips {
 			if (move.flags.punch && ability === 'ironfist') {
 				text += `<p class="movetag">&#x2713; Fist <small>(boosted by Iron Fist)</small></p>`;
 			}
+            if (move.flags.kick && ability === 'kickboxer') {
+                text += `<p class="movetag">&#x2713; Fist <small>(boosted by Kick Boxer)</small></p>`;
+            }
 			if (move.flags.pulse && ability === 'megalauncher') {
 				text += `<p class="movetag">&#x2713; Pulse <small>(boosted by Mega Launcher)</small></p>`;
 			}
@@ -1678,6 +1681,8 @@ export class BattleTooltips {
 					if (value.abilityModify(0, 'Galvanize')) moveType = 'Electric';
 					if (value.abilityModify(0, 'Pixilate')) moveType = 'Fairy';
 					if (value.abilityModify(0, 'Refrigerate')) moveType = 'Ice';
+                    if (value.abilityModify(0, 'Psychic Rave')) moveType = 'Psychic';
+                    if (value.abilityModify(0, 'Draconic Rage')) moveType = 'Dragon';
 				}
 				if (value.abilityModify(0, 'Normalize')) moveType = 'Normal';
 			}
@@ -2109,6 +2114,9 @@ export class BattleTooltips {
 		if (move.flags['punch']) {
 			value.abilityModify(1.2, 'Iron Fist');
 		}
+        if (move.flags['kick']) {
+            value.abilityModify(1.2, 'Kick Boxer');
+        }
 		if (move.flags['pulse']) {
 			value.abilityModify(1.5, "Mega Launcher");
 		}
@@ -2132,6 +2140,7 @@ export class BattleTooltips {
 		}
 		if (move.flags['sound']) {
 			value.abilityModify(1.3, "Punk Rock");
+            value.abilityModify(1.3, "Psychic Rave");
 		}
 		if (move.flags['slicing']) {
 			value.abilityModify(1.5, "Sharpness");
@@ -2161,6 +2170,7 @@ export class BattleTooltips {
 				value.abilityModify(this.battle.gen > 6 ? 1.2 : 1.3, "Galvanize");
 				value.abilityModify(this.battle.gen > 6 ? 1.2 : 1.3, "Pixilate");
 				value.abilityModify(this.battle.gen > 6 ? 1.2 : 1.3, "Refrigerate");
+                value.abilityModify(1.2, "Draconic Rage");
 			}
 			if (this.battle.gen > 6) {
 				value.abilityModify(1.2, "Normalize");

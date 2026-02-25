@@ -1181,6 +1181,8 @@ export interface MoveFlags {
 	distance?: 1 | 0;
 	/** Prevented from being executed or selected during Gravity's effect. */
 	gravity?: 1 | 0;
+    /** Power is multiplied by 1.2 when used by a Pokemon with the Kick Boxer Ability. */
+    kick?: 1 | 0;
 	/** Prevented from being executed or selected during Heal Block's effect. */
 	heal?: 1 | 0;
 	/** Can be copied by Mirror Move. */
